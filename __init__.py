@@ -4,20 +4,19 @@ import os
 from checkers.forms import SubmitForm
 import ast
 
-def update_board(board, move):
-	print(move)
-	prev_square_raw = move.split(" ")[0]
-	next_square_raw = move.split(" ")[1]
+def update_board(board, move, original):
 
-	next_square = int(next_square_raw.split("-")[2])
-	print(next_square)
+
+	next_square = int(move.split("-")[2])
+
 	row = next_square%8
 	column = next_square // 8
-	
+	print(row)
+	print(column)
 
 	board[column][row] = 'b'
 
-	prev_square = int(prev_square_raw.split("-")[2])
+	prev_square = int(original.split("-")[2])
 	prev_row = prev_square % 8
 	prev_col = prev_square // 8
 
@@ -74,8 +73,11 @@ def create_app(test_config=None):
 
 		print("HIIIII")
 		move = request.args.get('move')
+		original_square = request.args.get('original')
+
 		board = request.args.getlist('board')
-	
+		
+		print(board)
 
 		clean_board = []
 		for element in board:
@@ -85,7 +87,7 @@ def create_app(test_config=None):
 
 		print(move)
 		
-		clean_board = update_board(clean_board, move)
+		clean_board = update_board(clean_board, move, original_square)
 		
 
 		
@@ -105,18 +107,20 @@ def create_app(test_config=None):
 			new_element = ast.literal_eval(element)
 			clean_board.append(new_element)
 
-
+		print("board in showBoard")
 		print(clean_board)
 
-		form = SubmitForm()
-	
+		
 
 		if request.method == 'GET':
-			return render_template('checkerboard.html', form=form,  board= clean_board, move=None)
-		elif not form.validate():
-			return render_template('checkerboard.html', form=form,  board=clean_board, move = None)
+			return render_template('checkerboard.html', board= clean_board, move=None)
+	
 		else:
-			return redirect(url_for('getPlayerMove', move=form.keywords.data, board = clean_board))
+			move = request.form['move_value']
+			orig_square = request.form['prev_square']
+			print("board about to be passed")
+			print(clean_board)
+			return redirect(url_for('getPlayerMove', move=move, original = orig_square, board = clean_board))
 
 
 	@app.route('/')

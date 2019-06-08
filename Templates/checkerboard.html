@@ -938,6 +938,7 @@ document.addEventListener("drop", function(event) {
     selected_move = event.target.id;
     document.getElementById("move_value").value = selected_move;
 
+
     // window.alert("selected move : ", selected_move);
     
     
@@ -1010,20 +1011,13 @@ document.addEventListener("drop", function(event) {
     </div>
 
    
-     <input type="text" id="move_value">
-     <input type="text" id="prev_square">
 
-    <form action='' method="post">
-        {{ form.csrf_token }}
-         <div>
-         {{ form.keywords(size=32) }}
+     <form action="{{ url_for('showBoard',board=board) }}" method="post">
+        <input type="text" id="move_value" name="move_value">
+         <input type="text" id="prev_square" name="prev_square">
+        <input type="submit">
+        </form>
 
-         </div>
-
-        <div>
-        {{form.submit()}}
-         </div>
-    </form>
          
   
    
