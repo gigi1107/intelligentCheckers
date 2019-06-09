@@ -1000,8 +1000,8 @@ document.addEventListener("drop", function(event) {
    
 
      <form action="{{ url_for('showBoard',board=board) }}" method="post">
-        <input type="text" id="move_value" name="move_value" display="none">
-         <input type="text" id="prev_square" name="prev_square" display="none">
+        <input type="hidden" id="move_value" name="move_value" >
+         <input type="hidden" id="prev_square" name="prev_square" >
         <input type="submit">
         </form>
 
