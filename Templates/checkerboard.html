@@ -963,11 +963,11 @@ document.addEventListener("drop", function(event) {
              {% for j in range(8) %}
                 {% if j is divisibleby 2 %}
                      <section id="row-even-{{ns.counter}}">
-                         {% if board[i][j] == 'r' %}
+                         {% if board[j][i] == 'r' %}
                          <div class="checker-red"></div>
                        
                
-                        {% elif board[i][j] == 'b' %}
+                        {% elif board[j][i] == 'b' %}
                
                      <div draggable="true" class="checker-black"></div>
                
@@ -977,10 +977,10 @@ document.addEventListener("drop", function(event) {
                  {% else %}
                
                      <section id="row-odd-{{ns.counter}}">
-                         {% if board[i][j] == 'r' %}
+                         {% if board[j][i] == 'r' %}
                         <div class="checker-red"></div>
                
-                     {% elif board[i][j] == 'b' %}
+                     {% elif board[j][i] == 'b' %}
                
                      <div draggable="true" class="checker-black"></div>
                
@@ -1004,6 +1004,16 @@ document.addEventListener("drop", function(event) {
          <input type="hidden" id="prev_square" name="prev_square" >
         <input type="submit">
         </form>
+
+        <div>
+            <span> RED:</span>
+            {{redscore}}
+        </div>
+
+        <div>
+            <span>BLACK: </span>
+            {{blackscore}}
+        </div>
 
          
   
