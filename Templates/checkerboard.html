@@ -865,7 +865,7 @@ body{
 </style>
 
 <head> 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
 
     <script type="text/javascript" >
 
@@ -939,23 +939,10 @@ document.addEventListener("drop", function(event) {
     document.getElementById("move_value").value = selected_move;
 
 
-    // window.alert("selected move : ", selected_move);
     
     
   
 }, false);
-
-// $(document).ready(function() {
-
-//     $('#submit').click(function() {
-       
-
-        
-
-//     });
-// });
-
-
 
 
 
@@ -1013,8 +1000,8 @@ document.addEventListener("drop", function(event) {
    
 
      <form action="{{ url_for('showBoard',board=board) }}" method="post">
-        <input type="text" id="move_value" name="move_value">
-         <input type="text" id="prev_square" name="prev_square">
+        <input type="text" id="move_value" name="move_value" display="none">
+         <input type="text" id="prev_square" name="prev_square" display="none">
         <input type="submit">
         </form>
 

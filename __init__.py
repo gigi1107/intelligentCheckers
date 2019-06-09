@@ -1,10 +1,13 @@
 from flask import Flask
 from flask import render_template, url_for, request, redirect
 import os
-from checkers.forms import SubmitForm
+
 import ast
 
 def update_board(board, move, original):
+	
+	board[0][0] = ''
+	board[2][4] = 'r'
 
 
 	next_square = int(move.split("-")[2])
@@ -28,20 +31,13 @@ def update_board(board, move, original):
 	if row_diff == 2 and col_diff == 2:
 		print("TAKE THAT PIECE")
 		#calculate sqaure between and make it blank
-		if column > prev_col:
-			middle_col = prev_col + 1
-			middle_row = prev_row - 1
+		if prev_col > column and prev_row > row:
+			board[1+column][1+row] = ''
 		else:
-			middle_col = prev_col + 1
-			middle_row = prev_row + 1
-		print("middle row and col")
-		print(middle_row)
-		print(middle_col)
-		board[middle_col][middle_row] = ''
+			board[prev_col + 1][prev_row -1] = ''
 
 
-	board[0][0] = ''
-	board[2][4] = 'r'
+
 
 	##GET COMPUTER MOVE HERE AND UPDATE BOARD THAT WAY TOO
 	return board
@@ -130,10 +126,14 @@ def create_app(test_config=None):
 		for i in range(8):
 			inner = []
 			for j in range(8):
-				if(j == 0 or j == 1):
+				if((j == 0 or j == 2 )and i%2 == 0):
 					inner.append("r");
-				elif( j == 6 or j == 7):
-					inner.append("b");
+				elif (j == 1 and i%2 == 1):
+					inner.append("r")
+				elif( (j == 5 or j == 7) and i%2 ==1):
+					inner.append("b")
+				elif (j == 6 and i%2 == 0):
+					inner.append("b")
 				else:
 					inner.append(" ");
 			board.append(inner)
