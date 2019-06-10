@@ -11,19 +11,15 @@ def update_board(board, move, original):
 	row = next_square % 8
 	column = next_square // 8
 
-	
-
 	prev_square = int(original.split("-")[2])
 	prev_row = prev_square % 8
 	prev_col = prev_square // 8
 
-	board[prev_row][prev_col] = ''
-	
-
-	if row == 0:
+	if row == 0 or board[prev_row][prev_col] == 'B':
 		board[row][column] = 'B'
 	else:
 		board[row][column] = 'b'
+	board[prev_row][prev_col] = ''
 
 	#take pieces jumped
 	board= update(board, row, column, prev_row, prev_col)
@@ -33,10 +29,23 @@ def update_board(board, move, original):
 
 
 def update(board, next_row, next_col, prev_row, prev_col):
+	print("update")
+
+	print("prev_row, col")
+	print(prev_row)
+	print(prev_col)
+
+	print("next row, col")
+	print(next_row)
+	print(next_col)
+
 
 
 	row_diff = abs(next_row - prev_row)
 	col_diff = abs(next_col - prev_col)
+
+	print(row_diff)
+	print(col_diff)
 
 	if row_diff == 1 and col_diff ==1:
 		return board
@@ -57,6 +66,7 @@ def update(board, next_row, next_col, prev_row, prev_col):
 
 	else:
 		#recurively calculate jumps
+		print("recursive")
 		inter_row = 0
 		inter_col = 0
 		if next_row < prev_row and next_col > prev_col:
@@ -71,24 +81,62 @@ def update(board, next_row, next_col, prev_row, prev_col):
 		elif next_row > prev_row and next_col < prev_col:
 			inter_row = prev_row + 2
 			inter_col - prev_col - 2
+
+		#ambiguous cases
 		elif prev_col == next_col:
-			if board[prev_row - 1][prev_col - 1] == 'r':
-				inter_row = prev_row - 2
-				inter_col = prev_col - 2
-			else:
-				inter_row = prev_row - 2
-				inter_col = prev_col + 2
+
+			#move up 
+			if next_row < prev_row:
+				if board[prev_row - 1][prev_col - 1] != '':
+					inter_row = prev_row - 2
+					inter_col = prev_col - 2
+				elif board[prev_row - 1][prev_col + 1] != '':
+					inter_row = prev_row - 2
+					inter_col = prev_col + 2
+
+			#move down
+			
+				elif board[prev_row + 1][prev_col + 1] != '':
+					inter_row = prev_row + 2
+					inter_col = prev_col + 2
+				elif board[prev_row + 1][prev_col - 1] != '':
+					inter_row = prev_row + 2
+					inter_col = prev_col - 2
+
+		elif prev_row == next_row:
+
+			#move left
+
+			if next_col < prev_col:
+				if board[prev_row - 1][prev_col - 1] != '':
+					inter_row = prev_row - 2
+					inter_col = prev_col - 2
+				elif board[prev_row + 1][prev_col - 1] != '':
+					inter_row = prev_row + 2
+					inter_col = prev_col - 2
+
+			else : 
+				#move right
+				if board[prev_row - 1][prev_col + 1] != '':
+					inter_row = prev_row - 2
+					inter_col = prev_col + 2
+				elif board[prev_row + 1][prev_col + 1] != '':
+					inter_row = prev_row + 2 
+					inter_col = prev_col + 2
+			
+		
+
+
 		#todo add if prev row == next row in case of backwards hops
 
 		board = update(board, inter_row, inter_col, prev_row, prev_col)
+
 		board = update(board, next_row, next_col, inter_row, inter_col)
 	
 
 		return board
 
 
-
-	##GET COMPUTER MOVE HERE AND UPDATE BOARD THAT WAY TOO
 
 
 def create_app(test_config=None):
@@ -208,9 +256,5 @@ def create_app(test_config=None):
 		
 	
 		return redirect(url_for('showBoard' , board  = board))
-
-
-
-		
 
 	return app

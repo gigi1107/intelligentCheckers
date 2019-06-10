@@ -115,8 +115,6 @@
                         <div class="checker-red"></div>
                          {% elif board[j][i] == 'R' %}
                          <div class="checker-red">K</div>
-
-
                
                      {% elif board[j][i] == 'b' %}
                
@@ -137,20 +135,16 @@
       
     </div>
 
-   
+ 
 
-     <form action="{{ url_for('showBoard',board=board) }}" method="post">
+    <form action="{{ url_for('showBoard',board=board) }}" method="post">
+    <div class="style-button">
         <input type="hidden" id="move_value" name="move_value" >
          <input type="hidden" id="prev_square" name="prev_square" >
-        <input type="submit">
-        </form>
+        <input type="submit" value="Submit Move">
+    </div>
+    </form>
 
-       
-         
-  
-   
-
-      
  
     
 </div>
