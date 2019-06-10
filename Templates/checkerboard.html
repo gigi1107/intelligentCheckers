@@ -871,11 +871,6 @@ body{
 
   
 
-
-// todo : figure out how to track coordinates and semd them back 
-//figure out how to move red pieces, porbably thry animation
-//figure out how to send coors to backend and vice versa
-
 var dragged;
 var selected_move;
 
@@ -937,15 +932,9 @@ document.addEventListener("drop", function(event) {
 
     selected_move = event.target.id;
     document.getElementById("move_value").value = selected_move;
-
-
-    
-    
+   
   
 }, false);
-
-
-
 
 
 </script>

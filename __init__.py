@@ -27,6 +27,9 @@ def update_board(board, move, original, redscore, blackscore):
 	#take pieces jumped
 	board= update(board, row, column, prev_row, prev_col)
 
+
+
+
 	return (board, redscore, blackscore)
 
 
@@ -137,16 +140,29 @@ def create_app(test_config=None):
 	
 		
 		clean_board, redscore, blackscore= update_board(clean_board, move, original_square, redscore, blackscore)
-		print("after update")
-		print(redscore)
-		print(blackscore)
 		
+		r_ct = 0
+		b_ct = 0
+		for row in range(len(clean_board)):
+			for col in range(row): 
+				if clean_board[row][col] == 'r' or clean_board[row][col] == 'R':
+					r_ct += 1
+				elif clean_board[row][col] == 'b' or clean_board[row][col] == 'B':
+					b_ct += 1
+
+		if r_ct == 0 or b_ct == 0:
+			return redirect(url_for('gameOver'))
+		
+
 
 		
 		return redirect(url_for('showBoard', board = clean_board, redscore = redscore, blackscore = blackscore))
 			
 
-	
+	@app.route('/gameover')
+
+	def gameOver():
+		return render_template('gameover.html')
 
 	@app.route('/board',methods=['GET', 'POST'])
 
