@@ -1,945 +1,86 @@
 
 <!DOCTYPE html>
 <html>
-<style>
 
-body{
-    background-image: url("https://img.freepik.com/free-photo/old-wooden-texture-background-vintage_55716-1138.jpg?size=626&ext=jpg");
-}
-
-.container{
-   border: solid 30px;
-   height: 600px;
-
-}
-
-.column {
-    float:left;
-    width: 75px; 
-    height: 75px;
-    top: 0;
-    bottom: 0;
-}
-
-#row-odd-1{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-1:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-1:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-3{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-3:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-3:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-5{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-5:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-5:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-7{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-7:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-7:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-
-#row-odd-9{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-1:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-9:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-
-#row-odd-11{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-11:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-11:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-13{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-13:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-13:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-15{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-15:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-15:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-17{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-17:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-17:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-19{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-19:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-19:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-21{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-21:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-21:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-23{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-23:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-23:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-25{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-25:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-25:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-27{
-    width: 100%;
-    height: 75px; 
-}
-
-    #row-odd-27:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-27:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-29{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-29:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-29:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-
-#row-odd-31{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-31:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-31:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-33{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-33:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-33:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-35{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-35:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-35:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-37{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-37:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-37:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-39{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-39:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-39:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-41{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-41:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-41:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-43{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-43:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-43:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-45{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-45:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-45:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-#row-odd-47{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-47:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-47:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-49{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-49:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-49:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-51{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-51:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-51:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-53{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-53:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-53:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-55{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-55:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-55:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-57{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-57:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-57:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-59{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-59:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-59:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-61{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-61:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-61:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-#row-odd-63{
-    width: 100%;
-    height: 75px; 
-}
-    #row-odd-63:nth-child(even) {
-       background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(even) #row-odd-63:nth-child(even) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-
-
-
-
-
-
-#row-even-0{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-0:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-0:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-
-
- #row-even-2{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-2:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-2:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-4{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-4:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-4:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-6{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-6:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-6:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-8{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-8:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-8:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-10{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-10:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-10:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-12{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-12:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-12:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-14{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-14:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-14:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-16{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-16:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-16:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-18{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-18:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-18:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
-
- #row-even-20{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-20:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-20:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-22{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-22:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-22:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-24{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-24:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-24:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-26{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-26:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-26:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-28{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-28:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-28:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-30{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-30:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-30:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-32{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-32:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-32:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-34{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-34:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-34:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-36{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-36:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-36:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-38{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-38:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-38:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-40{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-40:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-40:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
-
- #row-even-42{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-42:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-42:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
-
- #row-even-44{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-44:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-44:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
-
- #row-even-46{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-46:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-46:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
-
- #row-even-48{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-48:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-48:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
-
- #row-even-50{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-50:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-50:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
-
- #row-even-52{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-52:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-52:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
-
- #row-even-54{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-54:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-54:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
-
- #row-even-56{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-56:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-56:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
-
- #row-even-58{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-58:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-58:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
- 
-
- #row-even-60{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-60:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-60:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-
- #row-even-62{ 
-    width: 100%;
-    height: 75px; 
-}
-    #row-even-62:nth-child(odd) {
-        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-wood-grain-background-material-grain-backgroundsimplelight-colorwooden-image_67324.jpg");
-    }
-    .column:nth-child(odd) #row-even-62:nth-child(odd) {
-        background-image: url("https://www.ialaminates.com/wp-content/uploads/3002-MCR-Afri-Wenge-Microline-web.jpg");
-    }
-
-
-
-
-
- .score-board {
-    
-    flex-basis: 100%;
-    background-color: red;
-    margin:30px;
-
- }
-
- .spacing {
-    padding-left: 200px;
- }
-
- .layout {
-    display:flex;
-    flex-direction: row;
-    padding:50px;
- }
-
- .checker-red{
-    position: absolute;
-    z-index: 9;
-    width:60px;
-    height:60px;
-    border: black;
-    border-radius: 60px;
-    background-image: linear-gradient(red, pink);
-  
-    text-align: center;
-    line-height:60px;
-    font-family: Arial;
-    font-size: x-large;
-    padding:3px;
- }
-
- .checker-black{
-    width:60px;
-    height:60px;
-    border: black;
-    border-radius: 60px;
-    /*background-image:  linear-gradient(black,gray);*/
-    background-color: black;
-    text-align: center;
-    line-height:60px;
-    color:white;
-    font-family: Arial;
-    font-size: x-large;
-    padding:3px;
-    cursor: pointer;
-
- }
-
-
-
-</style>
 
 <head> 
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+   
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/checkers_style.css') }}">
+
 
     <script type="text/javascript" >
 
   
 
-var dragged;
-var selected_move;
+        var dragged;
+        var selected_move;
 
-/* events fired on the draggable target */
-document.addEventListener("drag", function(event) {
+        /* events fired on the draggable target */
+        document.addEventListener("drag", function(event) {
 
-}, false);
+        }, false);
 
-document.addEventListener("dragstart", function(event) {
-  // store a ref. on the dragged elem
-  dragged = event.target;
+        document.addEventListener("dragstart", function(event) {
+          // store a ref. on the dragged elem
+          dragged = event.target;
 
-  parent = dragged.parentNode.id;
-  console.log("PARENT");
-  console.log(parent);
+          parent = dragged.parentNode.id;
+          console.log("PARENT");
+          console.log(parent);
 
-  document.getElementById("prev_square").value = parent;
-  // make it half transparent
-  event.target.style.opacity = .5;
-}, false);
+          document.getElementById("prev_square").value = parent;
+          // make it half transparent
+          event.target.style.opacity = .5;
+        }, false);
 
-document.addEventListener("dragend", function(event) {
-  // reset the transparency
-  event.target.style.opacity = "";
-}, false);
+        document.addEventListener("dragend", function(event) {
+          // reset the transparency
+          event.target.style.opacity = "";
+        }, false);
 
-/* events fired on the drop targets */
-document.addEventListener("dragover", function(event) {
-  // prevent default to allow drop
-  event.preventDefault();
-}, false);
+        /* events fired on the drop targets */
+        document.addEventListener("dragover", function(event) {
+          // prevent default to allow drop
+          event.preventDefault();
+        }, false);
 
-document.addEventListener("dragenter", function(event) {
-  // highlight potential drop target when the draggable element enters it
-  
-    event.target.style.background = "black";
-  
+        document.addEventListener("dragenter", function(event) {
+          // highlight potential drop target when the draggable element enters it
+          
+            event.target.style.background = "black";
+          
 
-}, false);
+        }, false);
 
-document.addEventListener("dragleave", function(event) {
-  // reset background of potential drop target when the draggable element leaves it
-  
-    event.target.style.background = "";
-  
+        document.addEventListener("dragleave", function(event) {
+          // reset background of potential drop target when the draggable element leaves it
+          
+            event.target.style.background = "";
+          
 
-}, false);
+        }, false);
 
-document.addEventListener("drop", function(event) {
-  // prevent default action (open as link for some elements)
-    event.preventDefault();
-  // move dragged elem to the selected drop target
-  
-    event.target.style.background = "";
-    dragged.parentNode.removeChild( dragged );
-    event.target.appendChild( dragged );
-    console.log("target child");
-    console.log(event.target.id);
+        document.addEventListener("drop", function(event) {
+          // prevent default action (open as link for some elements)
+            event.preventDefault();
+          // move dragged elem to the selected drop target
+          
+            event.target.style.background = "";
+            dragged.parentNode.removeChild( dragged );
+            event.target.appendChild( dragged );
+            console.log("target child");
+            console.log(event.target.id);
 
-    selected_move = event.target.id;
-    document.getElementById("move_value").value = selected_move;
-   
-  
-}, false);
-
-
-</script>
+            selected_move = event.target.id;
+            document.getElementById("move_value").value = selected_move;
+           
+          
+        }, false);
+    </script>
 
 </head>
+
+
 <body>
 
 
@@ -954,11 +95,15 @@ document.addEventListener("drop", function(event) {
                      <section id="row-even-{{ns.counter}}">
                          {% if board[j][i] == 'r' %}
                          <div class="checker-red"></div>
-                       
-               
+                         {% elif board[j][i] == 'R' %}
+                         <div class="checker-red">K</div>
+
                         {% elif board[j][i] == 'b' %}
                
-                     <div draggable="true" class="checker-black"></div>
+                         <div draggable="true" class="checker-black"></div>
+
+                         {% elif board[j][i] == 'B' %}
+                         <div draggable="true" class="checker-black">K</div>
                
                         {% endif %}
                      </section>
@@ -968,10 +113,16 @@ document.addEventListener("drop", function(event) {
                      <section id="row-odd-{{ns.counter}}">
                          {% if board[j][i] == 'r' %}
                         <div class="checker-red"></div>
+                         {% elif board[j][i] == 'R' %}
+                         <div class="checker-red">K</div>
+
+
                
                      {% elif board[j][i] == 'b' %}
                
                      <div draggable="true" class="checker-black"></div>
+                     {% elif board[j][i] == 'B' %}
+                        <div draggable="true" class="checker-black">K</div>
                
                          {% endif %}
                      </section>

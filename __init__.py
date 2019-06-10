@@ -18,13 +18,15 @@ def update_board(board, move, original):
 	prev_col = prev_square // 8
 
 	board[prev_row][prev_col] = ''
-	board[row][column] = 'b'
+	
+
+	if row == 0:
+		board[row][column] = 'B'
+	else:
+		board[row][column] = 'b'
 
 	#take pieces jumped
 	board= update(board, row, column, prev_row, prev_col)
-
-
-
 
 	return board
 
@@ -45,7 +47,7 @@ def update(board, next_row, next_col, prev_row, prev_col):
 		if prev_col > next_col and prev_row > next_row:
 			board[prev_row - 1][prev_col - 1]= ''
 		elif prev_col < next_col and prev_row > next_row:
-			board[prev_row  - 1][prev_row + 1] = ''
+			board[prev_row  - 1][prev_col + 1] = ''
 		elif prev_col < next_col and prev_row < next_row:
 			board[prev_row + 1][prev_col + 1] = ''
 		else:
@@ -135,10 +137,12 @@ def create_app(test_config=None):
 		r_ct = 0
 		b_ct = 0
 		for row in range(len(clean_board)):
-			for col in range(row): 
+			for col in range(len(clean_board[0])): 
 				if clean_board[row][col] == 'r' or clean_board[row][col] == 'R':
+					print(" red count plusplus")
 					r_ct += 1
 				elif clean_board[row][col] == 'b' or clean_board[row][col] == 'B':
+					print("black count plus plus")
 					b_ct += 1
 
 		if r_ct == 0 or b_ct == 0:
@@ -187,15 +191,17 @@ def create_app(test_config=None):
 			inner = []
 			for j in range(8):
 				if((i == 0 or i == 2) and j%2 == 0):
-					inner.append("r");
+					# inner.append("r");
+					inner.append("")
 				elif (i == 1 and j%2 == 1):
 					inner.append("r")
+
 				elif(( i == 5 or i == 7) and j%2 == 1):
 					inner.append("b")
 				elif (i == 6 and j%2 == 0):
 					inner.append("b")
 				else:
-					inner.append(" ");
+					inner.append("");
 			board.append(inner)
 
 		print(board)
