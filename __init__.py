@@ -4,12 +4,8 @@ import os
 
 import ast
 
-def update_board(board, move, original, redscore, blackscore):
-	print("update_board")
+def update_board(board, move, original):
 
-	print("just inside update board fxn")
-	print(redscore)
-	print(blackscore)
 	next_square = int(move.split("-")[2])
 
 	row = next_square % 8
@@ -30,7 +26,7 @@ def update_board(board, move, original, redscore, blackscore):
 
 
 
-	return (board, redscore, blackscore)
+	return board
 
 
 
@@ -84,7 +80,7 @@ def update(board, next_row, next_col, prev_row, prev_col):
 
 		board = update(board, inter_row, inter_col, prev_row, prev_col)
 		board = update(board, next_row, next_col, inter_row, inter_col)
-		print("got here")
+	
 
 		return board
 
@@ -122,12 +118,7 @@ def create_app(test_config=None):
 		
 		move = request.args.get('move')
 		original_square = request.args.get('original')
-		redscore = request.args.get('redscore')
-		blackscore = request.args.get('blackscore')
-		print("right after retrieval in getPlayerMove")
-		print(redscore)
-		print(blackscore)
-
+	
 
 		board = request.args.getlist('board')
 
@@ -139,7 +130,7 @@ def create_app(test_config=None):
 
 	
 		
-		clean_board, redscore, blackscore= update_board(clean_board, move, original_square, redscore, blackscore)
+		clean_board= update_board(clean_board, move, original_square)
 		
 		r_ct = 0
 		b_ct = 0
@@ -156,7 +147,7 @@ def create_app(test_config=None):
 
 
 		
-		return redirect(url_for('showBoard', board = clean_board, redscore = redscore, blackscore = blackscore))
+		return redirect(url_for('showBoard', board = clean_board))
 			
 
 	@app.route('/gameover')
@@ -170,14 +161,7 @@ def create_app(test_config=None):
 		print("showboard")
 
 		board = request.args.getlist('board')
-		redscore = request.args.get('redscore')
-		print("in showboard")
-		print("redscore")
-		print(redscore)
-
-		blackscore = request.args.get('blackscore')
-		print("blackscore")
-		print(blackscore)
+	
 		clean_board = []
 		for element in board:
 
@@ -186,12 +170,12 @@ def create_app(test_config=None):
 
 
 		if request.method == 'GET':
-			return render_template('checkerboard.html', board= clean_board, move=None , redscore=redscore, blackscore=blackscore)
+			return render_template('checkerboard.html', board= clean_board, move=None )
 	
 		else:
 			move = request.form['move_value']
 			orig_square = request.form['prev_square']
-			return redirect(url_for('getPlayerMove', move=move, original = orig_square, board = clean_board, redscore = redscore, blackscore = blackscore))
+			return redirect(url_for('getPlayerMove', move=move, original = orig_square, board = clean_board))
 
 
 	@app.route('/')
@@ -216,9 +200,8 @@ def create_app(test_config=None):
 
 		print(board)
 		
-		redscore = 0
-		blackscore = 0
-		return redirect(url_for('showBoard' , board  = board, redscore = redscore, blackscore = blackscore))
+	
+		return redirect(url_for('showBoard' , board  = board))
 
 
 
