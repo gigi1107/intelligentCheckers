@@ -1,6 +1,8 @@
 from flask import Flask
 from flask import render_template, url_for, request, redirect
 import os
+import checkers.checkers_game as computer
+import copy
 
 import ast
 
@@ -19,26 +21,48 @@ def update_board(board, move, original):
 		board[row][column] = 'B'
 	else:
 		board[row][column] = 'b'
-	board[prev_row][prev_col] = ''
+	board[prev_row][prev_col] = '-'
 
 	#take pieces jumped
 	board= update(board, row, column, prev_row, prev_col)
 
+
+	#get computer move
+
+
+	board_new = copy.deepcopy(board)
+
+
+	move= computer.interface(board_new)
+
+	
+	print("MOVE CALC BY COMP")
+
+	print(move)
+
+	if not move:
+		return None
+
+	prev_row_computer = move[0][0]
+	prev_col_computer = move[0][1]
+
+	next_row_computer = move[1][0]
+	next_col_computer = move[1][1]
+
+	if next_row_computer == 7 or board[prev_row_computer][prev_col_computer] == 'R':
+		board[next_row_computer][next_col_computer] = 'R'
+	else:
+		board[next_row_computer][next_col_computer] = 'r'
+	board[prev_row_computer][prev_col_computer] = '-'
+
+	board= update(board, next_row_computer, next_col_computer, prev_row_computer, prev_col_computer)
+
+
+
 	return board
 
 
-
 def update(board, next_row, next_col, prev_row, prev_col):
-	print("update")
-
-	print("prev_row, col")
-	print(prev_row)
-	print(prev_col)
-
-	print("next row, col")
-	print(next_row)
-	print(next_col)
-
 
 
 	row_diff = abs(next_row - prev_row)
@@ -52,21 +76,21 @@ def update(board, next_row, next_col, prev_row, prev_col):
 	#base case
 
 	if row_diff == 2 and col_diff ==2:
+
 		#calculate sqaure between and make it blank
 		if prev_col > next_col and prev_row > next_row:
-			board[prev_row - 1][prev_col - 1]= ''
+			board[prev_row - 1][prev_col - 1]= '-'
 		elif prev_col < next_col and prev_row > next_row:
-			board[prev_row  - 1][prev_col + 1] = ''
+			board[prev_row  - 1][prev_col + 1] = '-'
 		elif prev_col < next_col and prev_row < next_row:
-			board[prev_row + 1][prev_col + 1] = ''
+			board[prev_row + 1][prev_col + 1] = '-'
 		else:
-			board[prev_row +1][prev_col - 1] = ''
+			board[prev_row +1][prev_col - 1] = '-'
 
 		return board
 
 	else:
 		#recurively calculate jumps
-		print("recursive")
 		inter_row = 0
 		inter_col = 0
 		if next_row < prev_row and next_col > prev_col:
@@ -87,42 +111,53 @@ def update(board, next_row, next_col, prev_row, prev_col):
 
 			#move up 
 			if next_row < prev_row:
-				if board[prev_row - 1][prev_col - 1] != '':
-					inter_row = prev_row - 2
-					inter_col = prev_col - 2
-				elif board[prev_row - 1][prev_col + 1] != '':
-					inter_row = prev_row - 2
-					inter_col = prev_col + 2
+				if prev_row - 1 >= 0 and prev_col - 1 >= 0:
+					if board[prev_row - 1][prev_col - 1] != '-':
+						inter_row = prev_row - 2
+						inter_col = prev_col - 2
+				if prev_row - 1 >= 0 and prev_col + 1 <= 7:
+					if board[prev_row - 1][prev_col + 1] != '-':
+						inter_row = prev_row - 2
+						inter_col = prev_col + 2
 
 			#move down
-			
-				elif board[prev_row + 1][prev_col + 1] != '':
-					inter_row = prev_row + 2
-					inter_col = prev_col + 2
-				elif board[prev_row + 1][prev_col - 1] != '':
-					inter_row = prev_row + 2
-					inter_col = prev_col - 2
+			else:
+				
+				if prev_row + 1 <= 7 and prev_col + 1 <= 7:
+					if board[prev_row + 1][prev_col + 1] != '-':
+						inter_row = prev_row + 2
+						inter_col = prev_col + 2
+				if prev_row + 1 <= 7 and prev_col - 1 >= 0:
+					if board[prev_row + 1][prev_col - 1] != '-':
+						inter_row = prev_row + 2
+						inter_col = prev_col - 2
+
+
 
 		elif prev_row == next_row:
 
 			#move left
 
 			if next_col < prev_col:
-				if board[prev_row - 1][prev_col - 1] != '':
-					inter_row = prev_row - 2
-					inter_col = prev_col - 2
-				elif board[prev_row + 1][prev_col - 1] != '':
-					inter_row = prev_row + 2
-					inter_col = prev_col - 2
+				if prev_row - 1 >= 0 and prev_col - 1 >= 0:
+					if board[prev_row - 1][prev_col - 1] != '-':
+						inter_row = prev_row - 2
+						inter_col = prev_col - 2
+				if prev_row + 1 <= 7 and prev_col - 1 >= 0:
+					if board[prev_row + 1][prev_col - 1] != '-':
+						inter_row = prev_row + 2
+						inter_col = prev_col - 2
 
 			else : 
 				#move right
-				if board[prev_row - 1][prev_col + 1] != '':
-					inter_row = prev_row - 2
-					inter_col = prev_col + 2
-				elif board[prev_row + 1][prev_col + 1] != '':
-					inter_row = prev_row + 2 
-					inter_col = prev_col + 2
+				if prev_row - 1 >= 0 and prev_col <= 7:
+					if board[prev_row - 1][prev_col + 1] != '-':
+						inter_row = prev_row - 2
+						inter_col = prev_col + 2
+				if prev_row + 1 <= 7 and prev_col + 1 <=7:
+					if board[prev_row + 1][prev_col + 1] != '-':
+						inter_row = prev_row + 2 
+						inter_col = prev_col + 2
 			
 		
 
@@ -181,16 +216,19 @@ def create_app(test_config=None):
 	
 		
 		clean_board= update_board(clean_board, move, original_square)
+
+		if not clean_board:
+			return redirect(url_for('gameOver'))
 		
 		r_ct = 0
 		b_ct = 0
 		for row in range(len(clean_board)):
 			for col in range(len(clean_board[0])): 
 				if clean_board[row][col] == 'r' or clean_board[row][col] == 'R':
-					print(" red count plusplus")
+					
 					r_ct += 1
 				elif clean_board[row][col] == 'b' or clean_board[row][col] == 'B':
-					print("black count plus plus")
+					
 					b_ct += 1
 
 		if r_ct == 0 or b_ct == 0:
@@ -239,8 +277,8 @@ def create_app(test_config=None):
 			inner = []
 			for j in range(8):
 				if((i == 0 or i == 2) and j%2 == 0):
-					# inner.append("r");
-					inner.append("")
+					
+					inner.append("r")
 				elif (i == 1 and j%2 == 1):
 					inner.append("r")
 
@@ -249,7 +287,7 @@ def create_app(test_config=None):
 				elif (i == 6 and j%2 == 0):
 					inner.append("b")
 				else:
-					inner.append("");
+					inner.append("-")
 			board.append(inner)
 
 		print(board)
