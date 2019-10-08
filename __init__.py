@@ -6,16 +6,18 @@ import copy
 
 import ast
 
+BOARD_SIZE = 8
+
 def update_board(board, move, original):
 
 	next_square = int(move.split("-")[2])
 
-	row = next_square % 8
-	column = next_square // 8
+	row = next_square % BOARD_SIZE
+	column = next_square // BOARD_SIZE
 
 	prev_square = int(original.split("-")[2])
-	prev_row = prev_square % 8
-	prev_col = prev_square // 8
+	prev_row = prev_square % BOARD_SIZE
+	prev_col = prev_square // BOARD_SIZE
 
 	if row == 0 or board[prev_row][prev_col] == 'B':
 		board[row][column] = 'B'
@@ -33,7 +35,7 @@ def update_board(board, move, original):
 	board_new = copy.deepcopy(board)
 
 
-	move= computer.interface(board_new)
+	move= computer.get_computer_move(board_new)
 
 	
 	print("MOVE CALC BY COMP")
@@ -195,27 +197,20 @@ def create_app(test_config=None):
 	except OSError:
 	    pass
 
-
-	@app.route('/getplayermove',methods=['GET' , 'POST'])
+	@app.route('/getplayermove', methods=['GET' , 'POST'])
 	def getPlayerMove():
-		print("getplayermove")
-
-		
 		move = request.args.get('move')
 		original_square = request.args.get('original')
-	
-
 		board = request.args.getlist('board')
-
 		clean_board = []
 		for element in board:
-
 			new_element = ast.literal_eval(element)
 			clean_board.append(new_element)
 
-	
 		
 		clean_board= update_board(clean_board, move, original_square)
+		print("board front end")
+		print(clean_board)
 
 		if not clean_board:
 			return redirect(url_for('gameOver'))
